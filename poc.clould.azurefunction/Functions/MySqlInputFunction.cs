@@ -6,12 +6,12 @@ using Microsoft.Extensions.Logging;
 
 namespace poc.clould.azurefunction.Functions;
 
-public sealed class MySqlOutputFunction
+public sealed class MySqlInputFunction
 {
     private readonly ILogger _logger;
 
-    public MySqlOutputFunction(ILoggerFactory loggerFactory) =>
-        _logger = loggerFactory.CreateLogger<MySqlOutputFunction>();
+    public MySqlInputFunction(ILoggerFactory loggerFactory) =>
+        _logger = loggerFactory.CreateLogger<MySqlInputFunction>();
 
     [Function("all-customers")]
     public async Task<IActionResult> Run
