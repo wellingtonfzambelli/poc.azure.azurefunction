@@ -13,7 +13,7 @@ public sealed class HttpFunction
     public HttpFunction(ILogger<HttpFunction> logger) =>
         _logger = logger;
 
-    [Function("get-name-from-querystring")]
+    [Function("extract-name-from-querystring")]
     public async Task<IActionResult> Run
     (
         [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req
