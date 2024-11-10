@@ -1,1 +1,0 @@
-# poc.azure.azurefunction
