@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
-namespace poc.clould.azurefunction.Functions;
+namespace poc.cloud.azurefunction.Functions;
 
 public sealed class HttpFunction
 {

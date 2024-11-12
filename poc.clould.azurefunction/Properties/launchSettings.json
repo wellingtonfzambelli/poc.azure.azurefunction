@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "poc.clould.azurefunction": {
+    "poc.cloud.azurefunction": {
       "commandName": "Project",
       "commandLineArgs": "--port 7241"
     },

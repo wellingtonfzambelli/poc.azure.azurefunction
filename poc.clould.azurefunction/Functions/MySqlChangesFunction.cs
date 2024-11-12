@@ -1,19 +1,19 @@
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Extensions.MySql;
 using Microsoft.Extensions.Logging;
-using poc.clould.azurefunction.Entities;
+using poc.cloud.azurefunction.Entities;
 using System.Text.Json;
 
-namespace poc.clould.azurefunction.Functions;
+namespace poc.cloud.azurefunction.Functions;
 
-public sealed class MySQLFunction
+public sealed class MySqlChangesFunction
 {
     private readonly ILogger _logger;
 
-    public MySQLFunction(ILoggerFactory loggerFactory) =>
-        _logger = loggerFactory.CreateLogger<MySQLFunction>();
+    public MySqlChangesFunction(ILoggerFactory loggerFactory) =>
+        _logger = loggerFactory.CreateLogger<MySqlChangesFunction>();
 
-    [Function("MySQLFunction")]
+    [Function("MySQLChangesFunction")]
     public void Run
     (
         [MySqlTrigger("Customer", "connection-azure-function")] IReadOnlyList<MySqlChange<Customer>> changes,

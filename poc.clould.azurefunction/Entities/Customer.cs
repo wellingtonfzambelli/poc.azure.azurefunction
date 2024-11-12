@@ -1,4 +1,4 @@
-﻿namespace poc.clould.azurefunction.Entities;
+﻿namespace poc.cloud.azurefunction.Entities;
 
 public class Customer
 {

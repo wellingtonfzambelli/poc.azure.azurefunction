@@ -1,7 +1,9 @@
+USE pocazurefunction;
+
 SELECT * FROM Customer;
 
-INSERT INTO Customer (Name, Email) VALUES ('John Doe', 'johndoe@example.com');
-INSERT INTO Customer (Name, Email)VALUES ('Michael Scott', 'michael.scott@example.com');
+
+INSERT INTO customer (Name, Email) VALUES ('John Doe', 'johndoe@example.com');
 INSERT INTO Customer (Name, Email)VALUES ('Pam Beesly', 'pam.beesly@example.com');
 INSERT INTO Customer (Name, Email)VALUES ('Jim Halpert', 'jim.halpert@example.com');
 

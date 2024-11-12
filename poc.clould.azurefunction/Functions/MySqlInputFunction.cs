@@ -4,7 +4,7 @@ using Microsoft.Azure.Functions.Worker.Extensions.MySql;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 
-namespace poc.clould.azurefunction.Functions;
+namespace poc.cloud.azurefunction.Functions;
 
 public sealed class MySqlInputFunction
 {
