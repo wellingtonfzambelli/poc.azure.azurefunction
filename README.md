@@ -2,11 +2,11 @@
 It's a project to show how to use a Azure Function (TimerTrigger, HttpTrigger, MySqlChangesTrigger, MySqlSelect)
 
 # Stacks of this project
-.NET 8
-Azure Function
-MySQL
-Postman (for API testing)
-Visual Studio 2022
+- .NET 8
+- Azure Function
+- MySQL
+- Postman (for API testing)
+- Visual Studio 2022
 
 # MySQL script
 Run the script to create the database and table. 
