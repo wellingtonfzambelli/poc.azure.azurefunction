@@ -1,5 +1,5 @@
 # About
-It's a project to show how to use a Azure Function (Timer Trigger, Http Trigger, MySqlChange sTrigger, MySqlSelect)
+This project demonstrates the use of Azure Functions with various triggers: Timer Trigger, HTTP Trigger, MySQL Changes Trigger, and MySQL Select.
 
 # Stacks of this project
 - .NET 8
