@@ -37,3 +37,9 @@ It's triggered
 ![image](https://github.com/user-attachments/assets/4b111d71-ba95-482d-83ec-d2b8a8aa9fb8)
 Console logs
 ![image](https://github.com/user-attachments/assets/ea641837-c09b-4146-b4b7-fb584babae7b)
+
+# Azure Function - MySQL Input
+![image](https://github.com/user-attachments/assets/050c0fb2-7485-4bc4-bd58-d2179dcdefb2)
+It executes the query directly to database
+![image](https://github.com/user-attachments/assets/4c1c3b3d-7b99-4cb0-aa76-ad205f0420ca)
+![image](https://github.com/user-attachments/assets/a8a8344f-972d-4eac-96fc-04a047677bd9)
