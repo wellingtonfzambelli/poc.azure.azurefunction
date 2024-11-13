@@ -13,13 +13,13 @@ public sealed class TimerFunction
         _logger = loggerFactory.CreateLogger<TimerFunction>();
 
     [Function("TimerProcessing")]
-    public void Run([TimerTrigger("0/10 * * * * *")] TimerInfo myTimer)
+    public async Task RunAsync([TimerTrigger("0/10 * * * * *")] TimerInfo myTimer, CancellationToken ct)
     {
         _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
-        
+
         string connectionString = Environment.GetEnvironmentVariable("connection-azure-function").ToString();
 
-        IList<Customer> customers = GetCustomersFromDatabase(connectionString);
+        IList<Customer> customers = await GetCustomersFromDatabaseAsync(connectionString, ct);
 
         foreach (var customer in customers)
         {
@@ -27,28 +27,28 @@ public sealed class TimerFunction
         }
     }
 
-    private List<Customer> GetCustomersFromDatabase(string connectionString)
+    private async Task<IList<Customer>> GetCustomersFromDatabaseAsync(string connectionString, CancellationToken ct)
     {
-        List<Customer> customers = new List<Customer>();
+        IList<Customer> customers = new List<Customer>();
 
         try
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (var connection = new MySqlConnection(connectionString))
             {
-                connection.Open();
+                await connection.OpenAsync(ct);
                 string query = "SELECT Id, Name, Email FROM Customer";
 
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                using (var cmd = new MySqlCommand(query, connection))
                 {
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    using (var reader = await cmd.ExecuteReaderAsync(ct))
                     {
-                        while (reader.Read())
+                        while (await reader.ReadAsync(ct))
                         {
                             customers.Add(new Customer
                             {
-                                Id = reader.GetInt32("Id"),
-                                Name = reader.GetString("Name"),
-                                Email = reader.GetString("Email")
+                                Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                                Name = reader.GetString(reader.GetOrdinal("Name")),
+                                Email = reader.GetString(reader.GetOrdinal("Email"))
                             });
                         }
                     }
