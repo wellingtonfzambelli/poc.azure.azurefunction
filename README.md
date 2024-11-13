@@ -5,7 +5,7 @@ It's a project to show how to use a Azure Function (TimerTrigger, HttpTrigger, M
 - .NET 8
 - Azure Function
 - MySQL
-- Postman (for API testing)
+- Postman _(for API testing)_
 - Visual Studio 2022
 
 # MySQL script
