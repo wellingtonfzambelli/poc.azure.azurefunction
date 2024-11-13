@@ -1,9 +1,7 @@
-#About
-
+# About
 It's a project to show how to use a Azure Function (TimerTrigger, HttpTrigger, MySqlChangesTrigger, MySqlSelect)
 
-#Stacks of this project
-
+# Stacks of this project
 .NET 8
 Azure Function
 MySQL
