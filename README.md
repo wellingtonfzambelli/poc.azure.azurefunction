@@ -35,4 +35,5 @@ Update any data from Customer table
 
 It's triggered
 ![image](https://github.com/user-attachments/assets/4b111d71-ba95-482d-83ec-d2b8a8aa9fb8)
+Console logs
 ![image](https://github.com/user-attachments/assets/ea641837-c09b-4146-b4b7-fb584babae7b)
