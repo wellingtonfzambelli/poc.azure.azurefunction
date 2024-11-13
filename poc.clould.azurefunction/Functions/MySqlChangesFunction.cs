@@ -14,10 +14,11 @@ public sealed class MySqlChangesFunction
         _logger = loggerFactory.CreateLogger<MySqlChangesFunction>();
 
     [Function("MySQLChangesFunction")]
-    public void Run
+    public async Task RunAsync
     (
         [MySqlTrigger("Customer", "connection-azure-function")] IReadOnlyList<MySqlChange<Customer>> changes,
-        FunctionContext context
+        FunctionContext context,
+        CancellationToken ct
     )
     {
         _logger.LogInformation($"Table Customer changes: {JsonSerializer.Serialize(changes)}");
@@ -28,7 +29,9 @@ public sealed class MySqlChangesFunction
             var operationType = change.Operation;
 
             if (operationType == MySqlChangeOperation.Update)
-            { }            
+            { 
+                // .. do something here
+            }
 
             _logger.LogInformation($"Operation: {operationType}");
             _logger.LogInformation($"Customer Id: {customer.Id}, Name: {customer.Name}, Email: {customer.Email}");

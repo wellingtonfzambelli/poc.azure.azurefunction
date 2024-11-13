@@ -14,9 +14,10 @@ public sealed class HttpFunction
         _logger = logger;
 
     [Function("extract-name-from-querystring")]
-    public async Task<IActionResult> Run
+    public async Task<IActionResult> RunAsync
     (
-        [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req
+        [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req,
+        CancellationToken ct
     )
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");

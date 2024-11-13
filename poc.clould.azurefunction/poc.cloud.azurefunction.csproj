@@ -10,11 +10,6 @@
     <DockerfileContext>.</DockerfileContext>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Functions\HttpFunction.cs" />
-    <Compile Remove="Functions\MySqlChangesFunction.cs" />
-    <Compile Remove="Functions\MySqlInputFunction.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.22.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.23.0" />
